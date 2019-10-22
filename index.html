@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Url Shortener</title>
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/skeleton.css">
+</head>
+<body>
+    <div class="container" style="text-align: center; margin: 20rem;">
+        <form>
+            <label for="url">URL Shortner</label><br>
+            <input type="text" id="url" placeholder="Full URL Here"><br>
+            <input type="button" id="clickme" value="SUBMIT">
+        </form>
+        <div style="background: rgb(174, 187, 207);">
+            <p id="info"></p>
+        </div>
+    </div>
+
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script>
+        $('input#clickme').click(() => {
+            var data = {
+                url: $('input#url').val()
+            };
+
+            $.ajax({
+                type: 'POST',
+                url: '/',
+                data
+            }).done((response) => {
+                document.getElementById('info').innerHTML = `Shortened URL: ${response.message}`;
+            }).fail((response) => {
+                document.getElementById('info').innerHTML = `Failed!<br>Reason: Database error! Try again.`;
+            });
+        });
+    </script>
+</body>
+</html>
