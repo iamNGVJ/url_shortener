@@ -13,6 +13,6 @@ npm start
 
 # Requirements
 
-[MongoDB](https://mongodb.com)
+[MongoDB](https://mongodb.com/download-center)
 
 [Node.js](https://nodejs.org/download)
