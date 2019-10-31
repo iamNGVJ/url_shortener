@@ -9,7 +9,7 @@ npm start
 
 # The server should run on PORT:8080
 
-[URL Shortener](https://shorre.herokuapp.com)
+[Check it out](https://iamngoni.herokuapp.com)
 
 # Requirements
 
